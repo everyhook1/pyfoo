@@ -1,3 +1,4 @@
+# coding=utf-8
 import matplotlib.pyplot as plt
 
 decisionNode = dict(boxstyle="sawtooth", fc="0.8")  # 锯齿形状

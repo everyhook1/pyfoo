@@ -61,6 +61,7 @@ def regressData(filename):
     # return pickle.load(fr)
     return np.loadtxt(filename)
 
+
 # --------------回归树子函数  END  --------------#
 
 def chooseBestSplit(dataset, leafType=regressLeaf, errType=regressErr, threshold=(1, 4)):  # 函数做为参数，挺有意思
@@ -71,8 +72,8 @@ def chooseBestSplit(dataset, leafType=regressLeaf, errType=regressErr, threshold
         return None, leafType(dataset)
     m, n = np.shape(dataset)
     Err = errType(dataset)
-    bestErr = np.inf;
-    bestFeatureIndex = 0;
+    bestErr = np.inf
+    bestFeatureIndex = 0
     bestFeatureValue = 0
     for featureindex in range(n - 1):
         for featurevalue in dataset[:, featureindex]:
@@ -160,8 +161,8 @@ def linearSolve(dataset):
     if np.linalg.det(xTx) == 0:
         raise NameError('This matrix is singular, cannot do inverse,\n\
         try increasing the second value of threshold')
-        ws = xTx.I * (X.T * Y)
-        return ws, X, Y
+    ws = xTx.I * (X.T * Y)
+    return ws, X, Y
 
 
 def modelLeaf(dataset):
