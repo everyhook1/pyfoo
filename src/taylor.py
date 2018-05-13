@@ -8,7 +8,7 @@ plt.style.use("ggplot")
 # Define the variable and the function to approximate
 x = sy.Symbol('x')
 f = exp(x)
-f = (1-x)**(1/2)
+# f = (1-x)**(1/2)
 
 
 # Factorial function
@@ -42,7 +42,7 @@ def plot():
         plt.plot(x1, y1, label='order ' + str(j))
         y1 = []
     # Plot the function to approximate (sine, in this case)
-    plt.plot(x1, (1-x1)**(1/2), label='sin of x')
+    plt.plot(x1, np.exp(x1), label='sin of x')
     plt.xlim(x_lims)
     plt.ylim([-5, 5])
     plt.xlabel('x')
